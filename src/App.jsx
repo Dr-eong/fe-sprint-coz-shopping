@@ -5,12 +5,16 @@ import Header from "./Header";
 import BookmarkPage from "./Pages/BookmarkPage";
 import ProductListPage from "./Pages/ProductListPage";
 import MainPage from "./Pages/MainPage";
+import BookmarkBtn from "./components/BookmarkBtn";
+
+// 임시
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Header />
+        <BookmarkBtn />
         <MainPage />
         <Routes>
           <Route exact path="/" component={MainPage}></Route>
