@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { styled } from "styled-components";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import DropdownMenu from "./DropdownMenu";
+import DropdownMenu from "./components/DropdownMenu";
 
 const HeaderContainer = styled.header`
   width: 1280px;
@@ -9,6 +10,7 @@ const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
   box-shadow: 0px 8px 8px 0px #0000001a;
 
   span {
@@ -38,12 +40,12 @@ const HeaderContainer = styled.header`
   }
 `;
 
-//FIXME
-const openDropdownMenu = () => {
-  console.log("evnetasda");
-};
-
 function Header() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const openDropdownMenu = () => {
+    setIsVisible((isVisible) => !isVisible);
+  };
   return (
     <HeaderContainer>
       <div className="left">
@@ -56,9 +58,15 @@ function Header() {
           className="burger-icon"
           onClick={openDropdownMenu}
         />
-        <DropdownMenu />
+        {isVisible ? <DropdownMenu /> : ""}
       </div>
     </HeaderContainer>
   );
 }
 export default Header;
+
+/*
+1. 햄버거 아이콘 클릭
+2. 클릭 이벤트 발생
+5.  
+*/

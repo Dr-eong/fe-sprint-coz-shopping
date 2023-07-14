@@ -19,7 +19,6 @@ const FooterContainer = styled.footer`
 
   span {
     font-size: 12px;
-    font-weight: 400;
     line-height: 11px;
     letter-spacing: 0em;
     text-align: left;
@@ -27,7 +26,7 @@ const FooterContainer = styled.footer`
     height: 18px;
   }
 `;
-// FIXME : "Inter" 폰트 한국어 지원하지 않음, 특수문자 사용시 깨짐
+
 function Footer() {
   return (
     <FooterContainer>
